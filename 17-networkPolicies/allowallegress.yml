@@ -1,0 +1,12 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-all-egress
+  namespace: web
+spec:
+  podSelector: {}   # Allow traffic from all pods in web namespace
+  policyTypes:
+  - Egress
+  egress:
+  - {} # Allow all egress

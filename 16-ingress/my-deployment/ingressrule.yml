@@ -1,0 +1,31 @@
+ apiVersion: networking.k8s.io/v1
+ kind: Ingress
+ metadata:
+   name: echoserver-ingress
+   namespace: nginx-ingress
+   annotations:
+     nginx.ingress.kubernetes.io/rewrite-target: /$1
+     ingress.kubernetes.io/whitelist-source-range: 99.234.210.160/32
+     nginx.org/server-snippets: |
+       location / {
+         return 302 /ram;
+       }
+ spec:
+   rules:
+   - host: cetbizworld.com
+     http:
+       paths:
+       - path: /v1
+         pathType: Prefix
+         backend:
+           service:
+            name: echoserver-svc-1
+            port:
+              number: 80
+       - path: /v2
+         pathType: Prefix
+         backend:
+          service:
+           name: echoserver-svc-2
+           port:
+            number: 80

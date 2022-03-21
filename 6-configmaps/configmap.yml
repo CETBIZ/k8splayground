@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: game-demo
+data:
+  # property-like keys; each key maps to a simple value
+  myName: "Sameer"
+  myFriend: "Venkat"
+  anotherFriend: "Prakash"
+  myDabtabaseName: "mongo-venkat"
