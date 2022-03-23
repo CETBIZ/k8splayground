@@ -63,4 +63,4 @@ $ minikube start
 # Wait for 5-10 min to start your Kubernetes cluster. The output should be similar to the following
 ```
 
-![img.png](img.png)
+![img.png](img_1.png)
